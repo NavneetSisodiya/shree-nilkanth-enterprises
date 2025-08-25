@@ -50,13 +50,14 @@ npm install
 
 # Run development server
 npm run dev
+```
 
-🤝 Contributing
+## 🤝 Contributing
 Contributions, issues, and feature requests are welcome!
 Feel free to fork this repo and submit a pull request.
 
-📜 License
+## 📜 License
 This project is under the MIT License – free to use, modify, and distribute.
 
-⭐ Support
+## ⭐ Support
 If you find this project useful, please give it a star ⭐ to show your support!
