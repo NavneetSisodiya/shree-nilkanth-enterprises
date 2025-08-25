@@ -37,6 +37,7 @@ The goal was to create a clean, modern, and mobile-friendly site that works seam
 
 ## ⚡ Getting Started (Run Locally)  
 If you want to run the project on your system:  
+
 ```bash
 # Clone the repository
 git clone https://github.com/NavneetSisodiya/shree-nilkanth-enterprises.git
@@ -50,20 +51,12 @@ npm install
 # Run development server
 npm run dev
 
-# Start the development server
-npm run dev
+🤝 Contributing
+Contributions, issues, and feature requests are welcome!
+Feel free to fork this repo and submit a pull request.
 
-## 🤝 Contributing  
-Contributions are welcome!  
-If you’d like to improve the website or add features, feel free to **fork** this repo, make changes, and submit a **pull request**.  
+📜 License
+This project is under the MIT License – free to use, modify, and distribute.
 
----
-
-## 📜 License  
-This project is licensed under the **MIT License** – you’re free to use, modify, and distribute it.  
-
----
-
-## ⭐ Support  
-If you like this project, consider giving it a **star** ⭐ on GitHub.  
-It helps me stay motivated and reach more people! 🚀  
+⭐ Support
+If you find this project useful, please give it a star ⭐ to show your support!
