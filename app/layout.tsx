@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     "Leading manufacturer of high-quality HDPE, sprinkler, and agricultural pipes for construction, agriculture, and infrastructure projects.",
   keywords:
     "HDPE pipes, sprinkler pipes, agricultural pipes, pipe manufacturer, construction pipes, irrigation pipes",
+     icons: {
+    icon: "/shree.png",   // ye public folder se load hoga
+  },
 }
 
 export default function RootLayout({
