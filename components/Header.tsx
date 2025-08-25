@@ -150,43 +150,44 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-white border-t px-4 py-4 space-y-3 text-sm animate-fade-in-down">
-          <Link href="/" className="block text-gray-700 hover:text-black">Home</Link>
-          <Link href="/about" className="block text-gray-700 hover:text-black">About</Link>
+     {/* Mobile Menu */}
+{isMenuOpen && (
+  <div className="md:hidden absolute top-20 left-0 w-full bg-white border-t px-4 py-6 space-y-3 text-sm shadow-lg z-50">
+    <Link href="/" className="block text-gray-700 hover:text-black">Home</Link>
+    <Link href="/about" className="block text-gray-700 hover:text-black">About</Link>
 
-          <details>
-            <summary className="cursor-pointer text-gray-700 font-medium">Products</summary>
-            <div className="ml-4 mt-2 space-y-1">
-              {productCategories.map((cat, i) => (
-                <Link key={i} href={cat.href} className="block text-gray-600 hover:text-black">{cat.name}</Link>
-              ))}
-            </div>
-          </details>
+    <details>
+      <summary className="cursor-pointer text-gray-700 font-medium">Products</summary>
+      <div className="ml-4 mt-2 space-y-1">
+        {productCategories.map((cat, i) => (
+          <Link key={i} href={cat.href} className="block text-gray-600 hover:text-black">{cat.name}</Link>
+        ))}
+      </div>
+    </details>
 
-          <details>
-            <summary className="cursor-pointer text-gray-700 font-medium">Applications</summary>
-            <div className="ml-4 mt-2 space-y-1">
-              {applications.map((app, i) => (
-                <Link key={i} href={app.href} className="block text-gray-600 hover:text-black">{app.name}</Link>
-              ))}
-            </div>
-          </details>
+    <details>
+      <summary className="cursor-pointer text-gray-700 font-medium">Applications</summary>
+      <div className="ml-4 mt-2 space-y-1">
+        {applications.map((app, i) => (
+          <Link key={i} href={app.href} className="block text-gray-600 hover:text-black">{app.name}</Link>
+        ))}
+      </div>
+    </details>
 
-          <Link href="/blog" className="block text-gray-700 hover:text-black">Blog</Link>
-          <Link href="/contact" className="block text-gray-700 hover:text-black">Contact</Link>
+    <Link href="/blog" className="block text-gray-700 hover:text-black">Blog</Link>
+    <Link href="/contact" className="block text-gray-700 hover:text-black">Contact</Link>
 
-          <a
-            href="https://wa.me/919876543210"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block mt-3 text-center bg-black text-white py-2 rounded hover:opacity-90"
-          >
-            Chat on WhatsApp
-          </a>
-        </div>
-      )}
+    <a
+      href="https://wa.me/918109909680"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block mt-4 text-center bg-black text-white py-2 rounded hover:opacity-90"
+    >
+      Chat on WhatsApp
+    </a>
+  </div>
+)}
+
     </header>
   );
 };

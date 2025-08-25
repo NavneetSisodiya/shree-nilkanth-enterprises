@@ -124,7 +124,7 @@ const team = [
       <section className="bg-gray-700 text-white py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-8 animate-fade-in-up text-gray-200">About Shree Nilkanth Enterprises</h1>
+           <h1 className="text-3xl md:text-5xl font-bold text-gray-200 text-center mb-12 leading-snug">About Shree Nilkanth Enterprises</h1>
             <p className="text-2xl text-green-100 animate-slide-in-left">
               Two decades of excellence in pipe manufacturing, serving industries with quality and innovation.
             </p>
@@ -383,50 +383,72 @@ const team = [
   </div>
 </section>
 
-      {/* Company Timeline */}
-      <section className="py-20 bg-black">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">Our Journey</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Key milestones in our journey of growth and excellence.
-            </p>
-          </div>
+ {/* Company Timeline */}
+<section className="py-20 bg-black">
+  <div className="container mx-auto px-4">
+    {/* Heading */}
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Our Journey</h2>
+      <p className="text-base md:text-xl text-gray-300 max-w-3xl mx-auto">
+        Key milestones in our journey of growth and excellence.
+      </p>
+    </div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="relative">
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-green-600 "></div>
+    {/* Timeline */}
+    <div className="max-w-4xl mx-auto relative">
+      {/* Center Line (Desktop Only) */}
+      <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-green-600"></div>
 
-              {milestones.map((milestone, index) => (
-                <div
-                  key={index}
-                  className={`flex items-center mb-12 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
-                >
-                  <div className={`w-1/2 ${index % 2 === 0 ? "pr-12 text-right" : "pl-12"}`}>
-                    <div className="bg-gradient-to-br from-[#003d4d] to-[#00796b] p-8 rounded-2xl shadow-xl hover:shadow-xl transition-all duration-500 transform hover:scale-105">
-                      <h3 className="text-2xl font-bold text-green-400 mb-3">{milestone.year}</h3>
-                      <h4 className="text-xl font-semibold text-white mb-3">{milestone.event}</h4>
-                      <p className="text-gray-200">{milestone.description}</p>
-                    </div>
-                  </div>
-
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-green-600 rounded-full border-4 border-white shadow-lg "></div>
-
-                  <div className="w-1/2"></div>
-                </div>
-              ))}
+      {milestones.map((milestone, index) => (
+        <div
+          key={index}
+          className={`relative mb-12 flex flex-col md:flex-row ${
+            index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+          }`}
+        >
+          {/* Content Box */}
+          <div
+            className={`w-full md:w-1/2 ${
+              index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"
+            }`}
+          >
+            <div className="bg-gradient-to-br from-[#003d4d] to-[#00796b] p-6 md:p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+              <h3 className="text-xl md:text-2xl font-bold text-green-400 mb-3">
+                {milestone.year}
+              </h3>
+              <h4 className="text-lg md:text-xl font-semibold text-white mb-3">
+                {milestone.event}
+              </h4>
+              <p className="text-gray-200 text-sm md:text-base">{milestone.description}</p>
             </div>
           </div>
-        </div>
-        <section className="py-12 bg-gradient-to-br from-[#003d4d] to-[#00796b] text-white text-center rounded-2xl ">
-  <h2 className="text-3xl text-white font-bold mb-4">Let’s Build Something Great Together</h2>
-  <p className="text-lg text-white mb-6">Have a project or need pipes? Get in touch today.</p>
-  <a href="/contact" className="bg-white text-green-600 font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition">
-    Contact Us
-  </a>
-</section>
 
-      </section>
+          {/* Timeline Circle */}
+          <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-green-600 rounded-full border-4 border-white shadow-lg"></div>
+
+          {/* Spacer for layout on desktop */}
+          <div className="hidden md:block w-1/2"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* CTA Section */}
+  <section className="mt-16 py-12 bg-gradient-to-br from-[#003d4d] to-[#00796b] text-white text-center rounded-2xl mx-4 md:mx-0">
+    <h2 className="text-2xl md:text-3xl font-bold mb-4">
+      Let’s Build Something Great Together
+    </h2>
+    <p className="text-base md:text-lg mb-6">
+      Have a project or need pipes? Get in touch today.
+    </p>
+    <a
+      href="/contact"
+      className="bg-white text-green-600 font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition"
+    >
+      Contact Us
+    </a>
+  </section>
+</section>
 
       <Footer />
     </main>

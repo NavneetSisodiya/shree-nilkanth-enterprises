@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import clsx from "clsx"; 
+import clsx from "clsx";
 
 const slides = [
   {
@@ -41,7 +41,7 @@ const slides = [
     primaryCta: "/products/pvc-pipes",
     secondaryCta: "/applications",
   },
-   {
+  {
     image: "/HDPEteen.png",
     heading: "HDPE Pipes for Every Project",
     description: "HDPE Pipes for Seamless Flow & Industrial Strength.",
@@ -61,9 +61,9 @@ const HeroSlider = () => {
   }, []);
 
   return (
-    <section className="relative h-screen w-full bg-contain bg-no-repeat bg-center">
+    <section className="relative w-full h-[80vh] sm:h-[90vh] md:h-screen bg-black">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 transition-all duration-1000 ease-in-out ">
+      <div className="absolute inset-0 z-0 transition-all duration-1000 ease-in-out">
         {slides.map((slide, index) => (
           <Image
             key={index}
@@ -71,10 +71,11 @@ const HeroSlider = () => {
             alt={`Slide ${index + 1}`}
             fill
             className={clsx(
-              "object-cover transition-opacity duration-1000",
+              "object-cover sm:object-cover md:object-cover transition-opacity duration-1000",
               index === current ? "opacity-100" : "opacity-0"
             )}
             priority={index === 0}
+            sizes="100vw"
           />
         ))}
         {/* Overlay */}
@@ -82,23 +83,23 @@ const HeroSlider = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 flex flex-col justify-center items-center h-full text-center px-6">
-        <h1 className="text-white text-4xl md:text-6xl font-semibold mb-6 animate-fade-in-up">
+      <div className="relative z-20 flex flex-col justify-center items-center h-full text-center px-4 sm:px-6">
+        <h1 className="text-white text-2xl sm:text-4xl md:text-6xl font-semibold mb-4 sm:mb-6 animate-fade-in-up">
           {slides[current].heading}
         </h1>
-        <p className="text-gray-300 text-lg md:text-2xl max-w-2xl mb-8 animate-fade-in-up">
+        <p className="text-gray-300 text-sm sm:text-lg md:text-2xl max-w-xl sm:max-w-2xl mb-6 sm:mb-8 animate-fade-in-up">
           {slides[current].description}
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-in-up">
           <Link
             href={slides[current].primaryCta}
-            className="bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition"
+            className="bg-white text-black px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-gray-200 transition"
           >
             Explore
           </Link>
           <Link
             href={slides[current].secondaryCta}
-            className="border border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-black transition"
+            className="border border-white text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium hover:bg-white hover:text-black transition"
           >
             Learn More
           </Link>
