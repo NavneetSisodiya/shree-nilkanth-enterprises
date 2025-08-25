@@ -1,4 +1,5 @@
-import Link from "next/link"
+
+import Link from "next/link";
 import {
   Tractor,
   Building,
@@ -8,7 +9,7 @@ import {
   Home,
   Leaf,
   Zap,
-} from "lucide-react"
+} from "lucide-react";
 
 const EnhancedIndustriesSection = () => {
   const industries = [
@@ -89,87 +90,75 @@ const EnhancedIndustriesSection = () => {
         "Protecting electrical infrastructure in 500+ installations.",
       color: "from-purple-400 to-purple-600",
     },
-  ]
+  ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-green-50">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Industries We Serve</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-semibold mb-4">Industries We Serve</h2>
+          <p className="text-gray-600 max-w-3xl mx-auto">
             Our pipes serve diverse industries with specialized solutions tailored to meet specific requirements and
             deliver exceptional performance.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {industries.map((industry, index) => {
-            const IconComponent = industry.icon
+            const Icon = industry.icon;
             return (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 text-center group transform hover:scale-105 border border-gray-100"
+                className="rounded-2xl border border-gray-100 shadow-md hover:shadow-lg transition p-6 group"
               >
                 <div
-                  className={`bg-gradient-to-r ${industry.color} w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                  className={`bg-gradient-to-r ${industry.color} w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-5`}
                 >
-                  <IconComponent className="h-10 w-10 text-white" />
+                  <Icon className="w-8 h-8 text-white" />
                 </div>
-
-                <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-green-600 transition-colors">
+                <h3 className="text-xl font-bold text-gray-800 group-hover:text-green-600 mb-2">
                   {industry.title}
                 </h3>
-
-                <p className="text-gray-600 leading-relaxed mb-4">{industry.description}</p>
-
-                <div className="bg-green-50 rounded-lg p-3 mt-4">
-                  <p className="text-green-700 text-sm font-semibold">{industry.details}</p>
+                <p className="text-gray-600 text-sm mb-4">{industry.description}</p>
+                <div className="bg-gray-50 text-green-700 text-xs font-semibold p-3 rounded-md">
+                  {industry.details}
                 </div>
-
                 {industry.href && (
-                  <div className="mt-6">
-                    <Link href={industry.href}>
-                      <span className="text-green-600 hover:text-green-700 font-semibold text-sm border-b-2 border-transparent hover:border-green-600 transition-all duration-300 cursor-pointer">
-                        Learn More →
-                      </span>
+                  <div className="mt-4">
+                    <Link
+                      href={industry.href}
+                      className="text-sm text-green-600 hover:text-green-700 font-medium border-b border-transparent hover:border-green-600"
+                    >
+                      Learn More →
                     </Link>
                   </div>
                 )}
               </div>
-            )
+            );
           })}
         </div>
 
-        {/* Industry Statistics */}
-        <div className="mt-20 bg-white rounded-2xl shadow-xl p-8">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div className="group">
-              <div className="text-4xl font-bold text-green-600 mb-2 group-hover:scale-110 transition-transform">
-                15,000+
-              </div>
-              <p className="text-gray-600">Projects Completed</p>
-            </div>
-            <div className="group">
-              <div className="text-4xl font-bold text-green-600 mb-2 group-hover:scale-110 transition-transform">8</div>
-              <p className="text-gray-600">Industries Served</p>
-            </div>
-            <div className="group">
-              <div className="text-4xl font-bold text-green-600 mb-2 group-hover:scale-110 transition-transform">
-                25
-              </div>
-              <p className="text-gray-600">States Covered</p>
-            </div>
-            <div className="group">
-              <div className="text-4xl font-bold text-green-600 mb-2 group-hover:scale-110 transition-transform">
-                99%
-              </div>
-              <p className="text-gray-600">Client Satisfaction</p>
-            </div>
+        <div className="mt-24 grid md:grid-cols-4 gap-6 text-center bg-gray-50 p-8 rounded-xl shadow">
+          <div>
+            <p className="text-3xl font-bold text-green-600">15,000+</p>
+            <p className="text-gray-700 mt-1 text-sm">Projects Completed</p>
+          </div>
+          <div>
+            <p className="text-3xl font-bold text-green-600">8</p>
+            <p className="text-gray-700 mt-1 text-sm">Industries Served</p>
+          </div>
+          <div>
+            <p className="text-3xl font-bold text-green-600">25</p>
+            <p className="text-gray-700 mt-1 text-sm">States Covered</p>
+          </div>
+          <div>
+            <p className="text-3xl font-bold text-green-600">99%</p>
+            <p className="text-gray-700 mt-1 text-sm">Client Satisfaction</p>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default EnhancedIndustriesSection
+export default EnhancedIndustriesSection;

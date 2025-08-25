@@ -1,112 +1,102 @@
-import Header from "@/components/Header"
-import Footer from "@/components/Footer"
-import { Download, CheckCircle, ArrowRight } from "lucide-react"
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { Download, CheckCircle, ArrowRight } from "lucide-react";
 
-export default function HDPEPipesPage() {
+export default function SprinklerPipesPage() {
+ 
   const specifications = [
-    { size: "20mm", pressure: "6 kg/cm²", length: "6m" },
-    { size: "25mm", pressure: "6 kg/cm²", length: "6m" },
-    { size: "32mm", pressure: "6 kg/cm²", length: "6m" },
-    { size: "40mm", pressure: "6 kg/cm²", length: "6m" },
-    { size: "50mm", pressure: "6 kg/cm²", length: "6m" },
-    { size: "63mm", pressure: "6 kg/cm²", length: "6m" },
-    { size: "75mm", pressure: "6 kg/cm²", length: "6m" },
-    { size: "90mm", pressure: "6 kg/cm²", length: "6m" },
-    { size: "110mm", pressure: "6 kg/cm²", length: "6m" },
-    { size: "160mm", pressure: "6 kg/cm²", length: "6m" },
-  ]
+    { size: "50 mm", pressure: "2.5 – 4 kg/cm²", length: "6m" },
+    { size: "63 mm", pressure: "2.5 – 4 kg/cm²", length: "6m" },
+    { size: "75 mm", pressure: "2.5 – 4 kg/cm²", length: "6m" },
+    { size: "90 mm", pressure: "2.5 – 4 kg/cm²", length: "6m" },
+    { size: "110 mm", pressure: "2.5 – 4 kg/cm²", length: "6m" },
+  ];
 
   const features = [
-    "Corrosion resistant",
-    "Lightweight and flexible",
-    "Long service life (50+ years)",
-    "Chemical resistance",
-    "UV stabilized",
-    "Easy installation",
-    "Cost-effective",
-    "Recyclable material",
-  ]
+    "High impact strength",
+    "UV stabilized for long life",
+    "Corrosion & rust resistant",
+    "Leak-proof joints",
+    "Lightweight & easy to handle",
+    "Uniform water distribution",
+    "Withstands high pressure",
+    "Cost-effective irrigation solution",
+  ];
 
   const applications = [
-    "Water supply systems",
-    "Sewage and drainage",
-    "Industrial piping",
     "Agricultural irrigation",
-    "Gas distribution",
-    "Mining applications",
-    "Marine applications",
-    "Chemical processing",
-  ]
+    "Dust suppression in mining",
+    "Sports grounds & lawns",
+    "Tea & coffee plantations",
+    "Vegetable farms",
+    "Nurseries & orchards",
+    "Paddy fields",
+    "Industrial landscaping",
+  ];
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white text-gray-900">
       <Header />
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 to-gray-800 text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Sprinkler Pipes</h1>
-            <p className="text-xl text-gray-200">
-              High-Density Polyethylene pipes for superior performance in water supply and drainage systems.
-            </p>
-          </div>
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-green-800 to-green-600 text-white py-20">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h1 className="text-5xl font-bold mb-4">Sprinkler Pipes</h1>
+          <p className="text-lg text-green-100">
+            Durable and efficient pipes for uniform water distribution in agriculture and landscaping.
+          </p>
         </div>
       </section>
 
-      {/* Product Overview */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-6">Premium HDPE Pipes</h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Our HDPE pipes are manufactured using high-grade polyethylene material, ensuring exceptional durability
-                and performance. These pipes are ideal for water supply, drainage, and industrial applications where
-                reliability is paramount.
-              </p>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                With superior chemical resistance, flexibility, and a service life of over 50 years, our HDPE pipes
-                offer the perfect solution for modern infrastructure needs.
-              </p>
-
-              <button className="inline-flex items-center px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors">
-                <Download className="h-5 w-5 mr-2" />
-                Download Brochure
-              </button>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <img src="/placeholder.svg?height=250&width=300" alt="HDPE Pipes" className="rounded-lg shadow-lg" />
+      {/* Overview */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-3xl font-semibold mb-6">Premium Sprinkler Pipes</h2>
+            <p className="mb-4 text-gray-600 leading-relaxed">
+              Our sprinkler pipes are manufactured using high-quality HDPE/PVC materials,  
+              ensuring durability, strength, and consistent performance under varying pressures.  
+              Designed for easy installation and portability, they offer an ideal irrigation solution for farms and landscapes.
+            </p>
+            <p className="mb-6 text-gray-600 leading-relaxed">
+              With UV stabilization, high-pressure endurance, and leak-proof joints,  
+              these pipes are perfect for delivering water evenly over large areas, ensuring better crop yields.
+            </p>
+            <a 
+  href="/Brochure/Shree_Nilkanth_Enterprises_Brochure.pdf" 
+   download="Garden-Pipes-Brochure.pdf"
+             className="inline-flex items-center bg-green-700 hover:bg-green-800 text-white px-6 py-3 rounded-lg font-medium transition">
+              <Download className="w-5 h-5 mr-2" />
+              Download Brochure
+            </a>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            {["/sprinkler1.png", "/sprinkler2.png", "/sprinkler3.png", "/homeimage.png"].map((src, i) => (
               <img
-                src="/placeholder.svg?height=250&width=300"
-                alt="HDPE Installation"
-                className="rounded-lg shadow-lg"
+                key={i}
+                src={src}
+                alt={`Sprinkler Pipe ${i + 1}`}
+                className="rounded-xl shadow-md hover:shadow-xl transform hover:scale-105 transition"
               />
-              <img src="/placeholder.svg?height=250&width=300" alt="HDPE Fittings" className="rounded-lg shadow-lg" />
-              <img src="/placeholder.svg?height=250&width=300" alt="Quality Testing" className="rounded-lg shadow-lg" />
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Features */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Key Features & Benefits</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our HDPE pipes offer numerous advantages that make them the preferred choice for various applications.
-            </p>
-          </div>
-
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-semibold mb-4">Key Features & Benefits</h2>
+          <p className="text-gray-600 mb-10">
+            Designed for high performance & long-lasting irrigation solutions
+          </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-lg text-center">
-                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle className="h-8 w-8 text-blue-600" />
+            {features.map((feature, i) => (
+              <div key={i} className="bg-white p-6 rounded-xl shadow text-center">
+                <div className="bg-green-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <CheckCircle className="w-6 h-6 text-green-600" />
                 </div>
-                <h3 className="font-semibold text-gray-800">{feature}</h3>
+                <p className="text-gray-800 font-medium">{feature}</p>
               </div>
             ))}
           </div>
@@ -114,82 +104,64 @@ export default function HDPEPipesPage() {
       </section>
 
       {/* Specifications */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Technical Specifications</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Available in various sizes to meet your specific project requirements.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="bg-blue-600 text-white p-4">
-                <div className="grid grid-cols-3 gap-4 font-semibold">
-                  <div>Size (OD)</div>
-                  <div>Pressure Rating</div>
-                  <div>Standard Length</div>
-                </div>
-              </div>
-
-              <div className="divide-y divide-gray-200">
-                {specifications.map((spec, index) => (
-                  <div key={index} className="p-4 hover:bg-gray-50">
-                    <div className="grid grid-cols-3 gap-4">
-                      <div className="font-medium text-gray-800">{spec.size}</div>
-                      <div className="text-gray-600">{spec.pressure}</div>
-                      <div className="text-gray-600">{spec.length}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-semibold mb-4">Technical Specifications</h2>
+          <p className="text-gray-600 mb-10">
+            Available in multiple diameters to suit different irrigation setups
+          </p>
+          <div className="bg-white rounded-xl overflow-hidden shadow-md">
+            <div className="bg-green-700 text-white font-semibold grid grid-cols-3 py-4 px-6">
+              <div>Size (OD)</div>
+              <div>Pressure Rating</div>
+              <div>Standard Length</div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Applications */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Applications</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our HDPE pipes are suitable for a wide range of applications across various industries.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {applications.map((application, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
-                <div className="flex items-center">
-                  <ArrowRight className="h-5 w-5 text-blue-600 mr-3" />
-                  <span className="text-gray-800 font-medium">{application}</span>
-                </div>
+            {specifications.map((spec, i) => (
+              <div key={i} className="grid grid-cols-3 py-4 px-6 border-t text-gray-700 hover:bg-gray-50 transition">
+                <div>{spec.size}</div>
+                <div>{spec.pressure}</div>
+                <div>{spec.length}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-blue-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Need HDPE Pipes for Your Project?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Contact us today for a customized quote and expert consultation on your piping requirements.
+      {/* Applications */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-semibold mb-4">Applications</h2>
+          <p className="text-gray-600 mb-10 max-w-2xl mx-auto">
+            Efficient water delivery for farms, plantations, and landscapes
           </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {applications.map((app, i) => (
+              <div key={i} className="bg-white p-6 rounded-xl shadow-md flex items-center justify-center">
+                <ArrowRight className="w-5 h-5 text-green-600 mr-2" />
+                <span className="text-gray-800 font-medium">{app}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      {/* CTA */}
+      <section className="py-20 bg-green-700 text-white text-center">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-4">Need Sprinkler Pipes for Your Project?</h2>
+          <p className="text-lg mb-8">
+            Get high-performance sprinkler pipes for efficient and reliable irrigation.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
               href="/contact"
-              className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+              className="px-8 py-4 bg-white text-green-700 font-semibold rounded-lg hover:bg-gray-100 transition"
             >
               Get Quote
             </a>
             <a
-              href="tel:+919876543210"
-              className="inline-flex items-center px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-blue-600 font-semibold rounded-lg transition-colors"
+              href="tel:+918109909680"
+              className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-green-700 font-semibold rounded-lg transition"
             >
               Call Now
             </a>
@@ -199,5 +171,5 @@ export default function HDPEPipesPage() {
 
       <Footer />
     </main>
-  )
+  );
 }

@@ -1,12 +1,13 @@
 import Link from "next/link";
 
 const categories = [
-  { name: "HDPE Pipes", slug: "hdpe-pipes", image: "/assets/products/hdpe.jpg" },
-  { name: "LDPE Pipes", slug: "ldpe-pipes", image: "/assets/products/ldpe.jpg" },
-  { name: "Garden Pipes", slug: "garden-pipes", image: "/assets/products/garden.jpg" },
-  { name: "Suction Pipes", slug: "suction-pipes", image: "/assets/products/suction.jpg" },
-  { name: "Sprinkler Pipes", slug: "sprinkler-pipes", image: "/assets/products/sprinkler.jpg" },
-  { name: "PVC Pipes", slug: "pvc-pipes", image: "/assets/products/flexible.jpg" },
+  { name: "HDPE Pipes", slug: "hdpe-pipes", image: "/HDPE-Pipe.png" },
+  { name: "LDPE Pipes", slug: "ldpe-pipes", image: "/ldpe.png" },
+  { name: "Garden Pipes", slug: "garden-pipes", image: "/garden1.png" },
+  { name: "Suction Pipes", slug: "suction-pipes", image: "/suction1.png" },
+  { name: "Sprinkler Pipes", slug: "sprinkler-pipes", image: "/sprinkler1.png" },
+  { name: "PVC Pipes", slug: "pvc-pipes", image: "/pvc.png" },
+  { name: "Wires & Cables", slug: "wires-&-cables", image: "/wire(1).png" },
 ];
 
 export default function ProductsPage() {

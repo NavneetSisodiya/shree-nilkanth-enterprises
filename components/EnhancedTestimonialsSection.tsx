@@ -7,91 +7,89 @@ const EnhancedTestimonialsSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [selectedVideo, setSelectedVideo] = useState<number | null>(null)
 
-  const testimonials = [
-    {
-      name: "Rajesh Kumar",
-      company: "Kumar Construction Ltd.",
-      text: "Shree Nilkanth Enterprises has been our trusted partner for over 5 years. Their HDPE pipes are of exceptional quality and have never failed us in any project. The customer service is outstanding.",
-      rating: 5,
-      image: "/placeholder.svg?height=80&width=80&text=RK",
-      location: "Mumbai, Maharashtra",
-    },
-    {
-      name: "Priya Sharma",
-      company: "Green Valley Farms",
-      text: "The irrigation pipes from Shree Nilkanth have transformed our farming operations. The quality is outstanding and the customer service is excellent. Our crop yield increased by 40%.",
-      rating: 5,
-      image: "/placeholder.svg?height=80&width=80&text=PS",
-      location: "Pune, Maharashtra",
-    },
-    {
-      name: "Amit Patel",
-      company: "Metro Infrastructure",
-      text: "We have used their pipes in multiple government projects. The durability and reliability of their products make them our preferred supplier. Highly recommended for large-scale projects.",
-      rating: 5,
-      image: "/placeholder.svg?height=80&width=80&text=AP",
-      location: "Ahmedabad, Gujarat",
-    },
-    {
-      name: "Sunita Desai",
-      company: "Modern Builders",
-      text: "Excellent quality pipes with timely delivery. Their technical support team is very knowledgeable and helpful. We've completed over 20 projects using their products.",
-      rating: 5,
-      image: "/placeholder.svg?height=80&width=80&text=SD",
-      location: "Surat, Gujarat",
-    },
-    {
-      name: "Vikram Singh",
-      company: "Agricultural Solutions",
-      text: "Best irrigation pipes in the market. The garden pipes are particularly impressive - durable, flexible, and cost-effective. Our clients are extremely satisfied.",
-      rating: 5,
-      image: "/placeholder.svg?height=80&width=80&text=VS",
-      location: "Jaipur, Rajasthan",
-    },
-    {
-      name: "Meera Joshi",
-      company: "City Water Works",
-      text: "Professional service and top-quality products. Their HDPE pipes have been performing excellently in our municipal water supply projects for over 3 years now.",
-      rating: 5,
-      image: "/placeholder.svg?height=80&width=80&text=MJ",
-      location: "Nashik, Maharashtra",
-    },
-  ]
+const testimonials = [
+  {
+    name: "Rajesh Kumar",
+    company: "Kumar Construction Ltd.",
+    text: "Shree Nilkanth Enterprises has been our trusted partner for over 5 years. Their HDPE pipes are of exceptional quality and have never failed us in any project. The customer service is outstanding.",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+    location: "Mumbai, Maharashtra",
+  },
+  {
+    name: "Priya Sharma",
+    company: "Green Valley Farms",
+    text: "The irrigation pipes from Shree Nilkanth have transformed our farming operations. The quality is outstanding and the customer service is excellent. Our crop yield increased by 40%.",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+    location: "Pune, Maharashtra",
+  },
+ {
+  name: "Amit Mehra",
+  company: "Metro Infrastructure",
+  text: "We have used their pipes in multiple government projects. The durability and reliability of their products make them our preferred supplier. Highly recommended for large-scale projects.",
+  rating: 5,
+  image: "https://plus.unsplash.com/premium_photo-1689539137236-b68e436248de?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D", // Amit Patel updated
+  location: "Ahmedabad, Gujarat",
+},
+  {
+    name: "Ananya Verma",
+    company: "Modern Builders",
+    text: "Excellent quality pipes with timely delivery. Their technical support team is very knowledgeable and helpful. We've completed over 20 projects using their products.",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+    location: "Surat, Gujarat",
+  },
+  {
+    name: "Vikram Singh",
+    company: "Agricultural Solutions",
+    text: "Best irrigation pipes in the market. The garden pipes are particularly impressive - durable, flexible, and cost-effective. Our clients are extremely satisfied.",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+    location: "Jaipur, Rajasthan",
+  },
+  {
+    name: "Nisha Kapoor",
+    company: "City Water Works",
+    text: "Professional service and top-quality products. Their HDPE pipes have been performing excellently in our municipal water supply projects for over 3 years now.",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+    location: "Nashik, Maharashtra",
+  },
+];
 
-  const videoTestimonials = [
-    {
-      thumbnail: "/placeholder.svg?height=200&width=300&text=Construction+Project",
-      title: "Construction Project Success Story",
-      quote: "The pipes delivered exceptional performance in our 50-acre residential project.",
-      client: "Suresh Builders",
-      videoUrl: "https://youtu.be/DQkkSbAJMWc?si=gHSui1E9eXjTgrk_",
-      duration: "2:30",
-    },
-    {
-      thumbnail: "/placeholder.svg?height=200&width=300&text=Agricultural+Success",
-      title: "Agricultural Transformation",
-      quote: "Our crop yield increased by 40% after installing their irrigation system.",
-      client: "Modern Farms Ltd.",
-      videoUrl: "https://youtu.be/DQkkSbAJMWc?si=tXlDNrFWGAY6NadQ",
-      duration: "4:30",
-    },
-    {
-      thumbnail: "/placeholder.svg?height=200&width=300&text=Government+Project",
-      title: "Government Project Excellence",
-      quote: "Delivered on time with superior quality for our municipal water project.",
-      client: "City Municipal Corporation",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      duration: "4:20",
-    },
-    {
-      thumbnail: "/placeholder.svg?height=200&width=300&text=Garden+Installation",
-      title: "Garden Irrigation Success",
-      quote: "Perfect solution for our landscaping projects. Excellent quality and service.",
-      client: "Green Landscapes",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      duration: "2:45",
-    },
-  ]
+const videoTestimonials = [ 
+  {
+    thumbnail: "https://img.youtube.com/vi/nTZBx3lQUWQ/hqdefault.jpg",
+    title: "HDPE Sprinkler System for Agriculture",
+    quote: "This sprinkler irrigation system has provided highly efficient and uniform water distribution in our field, improving crop health significantly.",
+    client: "Suresh Builders",
+    videoUrl: "https://www.youtube.com/embed/nTZBx3lQUWQ",
+  },
+  {
+    thumbnail: "https://img.youtube.com/vi/a1DpRbYfNaU/hqdefault.jpg",
+    title: "HDPE Pipes Installation in the Field",
+    quote: "The HDPE pipes were delivered and installed efficiently, making setup in the field quick and hassle-free. The system is ready for effective irrigation.",
+    client: "Modern Farms Ltd.",
+    videoUrl: "https://www.youtube.com/embed/a1DpRbYfNaU",
+  },
+  {
+    thumbnail: "https://img.youtube.com/vi/mZXetb1TPEg/hqdefault.jpg",
+    title: "Cinematic Farming Success Story",
+    quote: "This cinematic footage showcases a thriving farm benefiting from efficient irrigation and modern HDPE piping solutions, leading to remarkable crop growth.",
+    client: "Golden Fields Agriculture",
+    videoUrl: "https://www.youtube.com/embed/mZXetb1TPEg",
+  },
+  {
+    thumbnail: "https://img.youtube.com/vi/AOpUtlEtA_4/hqdefault.jpg",
+    title: "Field Irrigation with LDPE Pipes",
+    quote: "Efficient water distribution through LDPE pipes has transformed this village field, ensuring crops receive consistent and adequate irrigation.",
+    client: "Riverbank Farms",
+    videoUrl: "https://www.youtube.com/embed/AOpUtlEtA_4",
+  },
+];
+
+
 
   const partners = [
     { name: "Tata Group", logo: "bajaj.jpeg" },
@@ -121,7 +119,7 @@ const EnhancedTestimonialsSection = () => {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-green-50 to-gray-50">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">What Our Clients Say</h2>
@@ -133,18 +131,18 @@ const EnhancedTestimonialsSection = () => {
 
         {/* Written Testimonials Carousel */}
         <div className="bg-white rounded-2xl shadow-2xl p-8 mb-16 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-400 to-green-600"></div>
+          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-gray-400 to-gray-800"></div>
 
           <div className="flex items-center justify-between mb-8">
             <button
               onClick={prevTestimonial}
-              className="p-3 rounded-full bg-green-100 hover:bg-green-200 transition-colors transform hover:scale-110"
+              className="p-3 rounded-full bg-black hover:bg-appleblue transition-colors transform hover:scale-110"
             >
-              <ChevronLeft className="h-6 w-6 text-green-600" />
+              <ChevronLeft className="h-6 w-6 text-gray-100" />
             </button>
 
             <div className="text-center flex-1 px-8">
-              <Quote className="h-16 w-16 text-green-600 mx-auto mb-6" />
+              <Quote className="h-16 w-16 text-appleblue mx-auto mb-6" />
               <p className="text-xl text-gray-700 mb-8 italic max-w-3xl mx-auto leading-relaxed">
                 "{testimonials[currentTestimonial].text}"
               </p>
@@ -153,11 +151,11 @@ const EnhancedTestimonialsSection = () => {
                 <img
                   src={testimonials[currentTestimonial].image || "/placeholder.svg"}
                   alt={testimonials[currentTestimonial].name}
-                  className="w-20 h-20 rounded-full mr-6 border-4 border-green-200"
+                  className="w-20 h-20 rounded-full mr-6 border-4 border-gray-200"
                 />
                 <div className="text-left">
                   <h4 className="text-xl font-bold text-gray-800">{testimonials[currentTestimonial].name}</h4>
-                  <p className="text-green-600 font-semibold">{testimonials[currentTestimonial].company}</p>
+                  <p className="text-appleblue font-semibold">{testimonials[currentTestimonial].company}</p>
                   <p className="text-gray-500 text-sm">{testimonials[currentTestimonial].location}</p>
                 </div>
               </div>
@@ -171,9 +169,9 @@ const EnhancedTestimonialsSection = () => {
 
             <button
               onClick={nextTestimonial}
-              className="p-3 rounded-full bg-green-100 hover:bg-green-200 transition-colors transform hover:scale-110"
+              className="p-3 rounded-full bg-black hover:bg-appleblue transition-colors transform hover:scale-110"
             >
-              <ChevronRight className="h-6 w-6 text-green-600" />
+              <ChevronRight className="h-6 w-6 text-gray-100" />
             </button>
           </div>
 
@@ -183,7 +181,7 @@ const EnhancedTestimonialsSection = () => {
                 key={index}
                 onClick={() => setCurrentTestimonial(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentTestimonial ? "bg-green-600 scale-125" : "bg-gray-300 hover:bg-green-300"
+                  index === currentTestimonial ? "bg-gray-600 scale-125" : "bg-gray-300 hover:bg-green-300"
                 }`}
               />
             ))}
@@ -205,7 +203,6 @@ const EnhancedTestimonialsSection = () => {
                   <Play className="w-8 h-8 text-white" />
                 </div>
                 <div className="absolute bottom-2 right-2 bg-black text-white text-xs px-2 py-1 rounded">
-                  {video.duration}
                 </div>
               </div>
               <div className="p-4">

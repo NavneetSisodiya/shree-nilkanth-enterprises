@@ -1,86 +1,102 @@
-import Header from "@/components/Header"
-import Footer from "@/components/Footer"
-import Link from "next/link"
-import { Calendar, Tag, ArrowRight, User } from "lucide-react"
+"use client"
+import { useState } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Link from "next/link";
+import { Calendar, Tag, ArrowRight, User } from "lucide-react";
 
 export default function BlogPage() {
   const blogPosts = [
     {
-      title: "Best Practices for HDPE Pipe Installation",
+      title: "Revolutionary HDPE Pipe Technology for Modern Agriculture",
       excerpt:
-        "Learn the essential techniques and tips for proper HDPE pipe installation to ensure longevity and optimal performance in your projects.",
-      image: "/placeholder.svg?height=300&width=400",
+        "Discover how advanced HDPE pipe technology is transforming agricultural irrigation systems and boosting crop yields by up to 40% while conserving water resources.",
+      image: "/blog1.png",
       date: "March 15, 2024",
-      author: "Technical Team",
-      tags: ["Pipe Tips", "Installation", "HDPE"],
+      author: "Dr. Rajesh Kumar",
+      tags: ["Technology", "Agriculture", "Innovation"],
       readTime: "5 min read",
-      slug: "hdpe-pipe-installation",
+      slug: "hdpe-pipe-technology",
+      category: "Technology",
     },
     {
-      title: "Modern Irrigation Systems for Agriculture",
+      title: "Smart Garden Irrigation: The Future of Home Gardening",
       excerpt:
-        "Discover how modern irrigation pipe systems are revolutionizing agricultural practices and improving crop yields across different farming methods.",
-      image: "/placeholder.svg?height=300&width=400",
-      date: "March 10, 2024",
-      author: "Agriculture Expert",
-      tags: ["Agriculture", "Irrigation", "Farming"],
+        "Learn about intelligent garden irrigation systems that automatically adjust water flow based on soil moisture, weather conditions, and plant requirements.",
+      image: "/blog2.png",
+      date: "March 12, 2024",
+      author: "Priya Sharma",
+      tags: ["Garden", "Smart Tech", "Water Conservation"],
       readTime: "7 min read",
-      slug: "modern-irrigation-systems",
+      slug: "smart-garden-irrigation",
+      category: "Gardening",
     },
     {
-      title: "Choosing the Right Pipe for Your Project",
+      title: "Sustainable Farming with Eco-Friendly Pipe Solutions",
       excerpt:
-        "A comprehensive guide to selecting the appropriate pipe type based on your specific project requirements, conditions, and budget considerations.",
-      image: "/placeholder.svg?height=300&width=400",
-      date: "March 5, 2024",
-      author: "Engineering Team",
-      tags: ["Pipe Tips", "Guide", "Selection"],
+        "Explore how environmentally conscious pipe materials and installation techniques are helping farmers reduce their carbon footprint while maintaining productivity.",
+      image: "/blog3.png",
+      date: "March 10, 2024",
+      author: "Amit Patel",
+      tags: ["Sustainability", "Farming", "Environment"],
       readTime: "6 min read",
-      slug: "choosing-right-pipe",
+      slug: "sustainable-farming-pipes",
+      category: "Sustainability",
     },
     {
-      title: "Water Conservation with Efficient Piping",
+      title: "Installation Best Practices for Long-Lasting Pipe Systems",
       excerpt:
-        "Explore how efficient piping systems contribute to water conservation efforts and sustainable infrastructure development.",
-      image: "/placeholder.svg?height=300&width=400",
-      date: "February 28, 2024",
-      author: "Sustainability Team",
-      tags: ["Water Conservation", "Sustainability", "Efficiency"],
-      readTime: "4 min read",
-      slug: "water-conservation-piping",
-    },
-    {
-      title: "Quality Control in Pipe Manufacturing",
-      excerpt:
-        "Understanding the rigorous quality control processes that ensure every pipe meets international standards and customer expectations.",
-      image: "/placeholder.svg?height=300&width=400",
-      date: "February 20, 2024",
-      author: "Quality Team",
-      tags: ["Quality Control", "Manufacturing", "Standards"],
+        "Master the art of proper pipe installation with our comprehensive guide covering everything from soil preparation to joint sealing techniques.",
+      image: "/blog4.png",
+      date: "March 8, 2024",
+      author: "Technical Team",
+      tags: ["Installation", "Best Practices", "Maintenance"],
       readTime: "8 min read",
-      slug: "quality-control-manufacturing",
+      slug: "installation-best-practices",
+      category: "Installation",
     },
     {
-      title: "Future of Pipe Technology",
+      title: "Water Conservation Strategies for Commercial Agriculture",
       excerpt:
-        "Exploring emerging technologies and innovations in pipe manufacturing that will shape the future of infrastructure development.",
-      image: "/placeholder.svg?height=300&width=400",
-      date: "February 15, 2024",
-      author: "R&D Team",
-      tags: ["Innovation", "Technology", "Future"],
+        "Implement proven water conservation techniques using advanced piping systems to reduce water usage by 30% while maintaining optimal crop growth.",
+      image: "/blog5.png",
+      date: "March 5, 2024",
+      author: "Sustainability Team",
+      tags: ["Water Conservation", "Commercial", "Efficiency"],
       readTime: "6 min read",
-      slug: "future-pipe-technology",
+      slug: "water-conservation-strategies",
+      category: "Water Conservation",
     },
-  ]
+    {
+      title: "Quality Control in Modern Pipe Manufacturing",
+      excerpt:
+        "Take a behind-the-scenes look at our rigorous quality control processes that ensure every pipe meets international standards and exceeds customer expectations.",
+      image: "/blog6.png",
+      date: "March 3, 2024",
+      author: "Quality Assurance Team",
+      tags: ["Quality", "Manufacturing", "Standards"],
+      readTime: "5 min read",
+      slug: "quality-control-manufacturing",
+      category: "Quality Control",
+    },
+  ];
 
   const categories = [
-    { name: "All Posts", count: blogPosts.length },
-    { name: "Pipe Tips", count: 3 },
-    { name: "Agriculture", count: 2 },
-    { name: "Installation", count: 2 },
-    { name: "Technology", count: 1 },
-    { name: "Quality Control", count: 1 },
-  ]
+    "All",
+    "Technology",
+    "Gardening",
+    "Sustainability",
+    "Installation",
+    "Water Conservation",
+    "Quality Control",
+  ];
+
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const filteredPosts =
+    selectedCategory === "All"
+      ? blogPosts
+      : blogPosts.filter((post) => post.category === selectedCategory);
 
   return (
     <main className="min-h-screen">
@@ -90,7 +106,7 @@ export default function BlogPage() {
       <section className="bg-gradient-to-br from-blue-900 to-gray-800 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Blogs & Insights</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-blue-400 mb-6">Blogs & Insights</h1>
             <p className="text-xl text-gray-200">
               Stay updated with the latest industry trends, installation tips, and product insights from our experts.
             </p>
@@ -109,40 +125,26 @@ export default function BlogPage() {
                 <ul className="space-y-3">
                   {categories.map((category, index) => (
                     <li key={index}>
-                      <a
-                        href="#"
-                        className="flex items-center justify-between text-gray-600 hover:text-blue-600 transition-colors"
+                      <button
+                        onClick={() => setSelectedCategory(category)}
+                        className={`w-full text-left px-3 py-2 rounded ${
+                          selectedCategory === category
+                            ? "bg-blue-600 text-white"
+                            : "text-gray-600 hover:bg-gray-200"
+                        }`}
                       >
-                        <span>{category.name}</span>
-                        <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded-full text-sm">
-                          {category.count}
-                        </span>
-                      </a>
+                        {category}
+                      </button>
                     </li>
                   ))}
                 </ul>
-
-                <div className="mt-8">
-                  <h4 className="text-lg font-semibold text-gray-800 mb-4">Newsletter</h4>
-                  <p className="text-gray-600 text-sm mb-4">Subscribe to get the latest updates and insights.</p>
-                  <div className="flex">
-                    <input
-                      type="email"
-                      placeholder="Your email"
-                      className="flex-1 px-3 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    />
-                    <button className="px-4 py-2 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 transition-colors">
-                      Subscribe
-                    </button>
-                  </div>
-                </div>
               </div>
             </div>
 
             {/* Blog Posts */}
             <div className="lg:col-span-3">
               <div className="grid md:grid-cols-2 gap-8">
-                {blogPosts.map((post, index) => (
+                {filteredPosts.map((post, index) => (
                   <article
                     key={index}
                     className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow group"
@@ -200,25 +202,6 @@ export default function BlogPage() {
                   </article>
                 ))}
               </div>
-
-              {/* Pagination */}
-              <div className="flex justify-center mt-12">
-                <nav className="flex space-x-2">
-                  <button className="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">
-                    Previous
-                  </button>
-                  <button className="px-4 py-2 bg-blue-600 text-white rounded-lg">1</button>
-                  <button className="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">
-                    2
-                  </button>
-                  <button className="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">
-                    3
-                  </button>
-                  <button className="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">
-                    Next
-                  </button>
-                </nav>
-              </div>
             </div>
           </div>
         </div>
@@ -226,5 +209,5 @@ export default function BlogPage() {
 
       <Footer />
     </main>
-  )
+  );
 }

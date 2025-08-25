@@ -1,4 +1,4 @@
-import { Tractor, Building, Droplets, Factory, Wrench, Home } from "lucide-react"
+import { Tractor, Building, Droplets, Factory, Wrench, Home } from "lucide-react";
 
 const IndustriesSection = () => {
   const industries = [
@@ -32,40 +32,36 @@ const IndustriesSection = () => {
       title: "Construction",
       description: "Building construction, plumbing, and electrical conduit applications.",
     },
-  ]
+  ];
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Industries We Serve</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Our pipes serve diverse industries with specialized solutions tailored to meet specific requirements.
-          </p>
-        </div>
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+        <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl mb-6">Industries We Serve</h2>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-12">
+          Our pipes serve diverse industries with specialized solutions tailored to meet specific requirements.
+        </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {industries.map((industry, index) => {
-            const IconComponent = industry.icon
+            const IconComponent = industry.icon;
             return (
               <div
                 key={index}
-                className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-shadow text-center group"
+                className="rounded-xl border border-gray-200 p-6 hover:shadow-xl transition-all"
               >
-                <div className="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 transition-colors">
-                  <IconComponent className="h-10 w-10 text-blue-600 group-hover:text-white transition-colors" />
+                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <IconComponent className="h-8 w-8 text-blue-600" />
                 </div>
-
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">{industry.title}</h3>
-
-                <p className="text-gray-600 leading-relaxed">{industry.description}</p>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">{industry.title}</h3>
+                <p className="text-gray-600 text-sm">{industry.description}</p>
               </div>
-            )
+            );
           })}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default IndustriesSection
+export default IndustriesSection;
